@@ -1,0 +1,10 @@
+name: KillCommand
+version: '${project.version}'
+main: f3f5.killcommand.KillCommand
+commands:
+  kill:
+    description: It kills the player passed and if none, kills the command sender.
+    usage: <command>
+  suicide:
+    description: It kills the player passed and if none, kills the command sender.
+    usage: <command>
