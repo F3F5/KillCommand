@@ -9,7 +9,6 @@ public class KillCommand extends JavaPlugin {
     @Override
     public void onEnable() {
         registerCommand("kill");
-        registerCommand("suicide");
     }
 
     @Override

@@ -6,7 +6,4 @@ folia-supported: true
 commands:
   kill:
     description: It kills the player passed and if none, kills the command sender.
-    usage: <command>
-  suicide:
-    description: It kills the player passed and if none, kills the command sender.
-    usage: <command>
+    aliases: [suicide]
