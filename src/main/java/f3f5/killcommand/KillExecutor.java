@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.Bukkit;
+import org.bukkit.event.entity.EntityDamageEvent;
 
 public class KillExecutor implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -20,14 +21,15 @@ public class KillExecutor implements CommandExecutor {
             return true;
         }
 
-        player.setHealth(0.0D);
+        player.setLastDamageCause(new EntityDamageEvent(player, EntityDamageEvent.DamageCause.SUICIDE, Integer.MAX_VALUE));
+        player.setHealth(Double.MIN_VALUE);
         return true;
     }
-  
+
     private boolean hasPermission(CommandSender sender, String permission) {
         return sender.hasPermission(permission);
     }
-  
+
     private Player getPlayer(String name) {
         return Bukkit.getPlayer(name);
     }
