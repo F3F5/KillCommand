@@ -16,7 +16,7 @@ public class KillExecutor implements CommandExecutor {
             return true;
         }
 
-        Player player = (args.length == 0 && sender instanceof Player) ? (Player) sender : getPlayer(args[0]);
+        Player player = (args.length == 0 && sender instanceof Player) ? (Player) sender : (args.length > 0 ? getPlayer(args[0]) : null);
         if (player == null) {
             sender.sendMessage(ChatColor.RED + "Player not found.");
             return true;
