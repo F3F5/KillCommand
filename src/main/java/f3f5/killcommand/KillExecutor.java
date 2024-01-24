@@ -5,8 +5,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.Bukkit;
 import org.bukkit.event.entity.EntityDamageEvent;
+
+import static org.bukkit.Bukkit.getPlayer;
 
 public class KillExecutor implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -15,7 +16,7 @@ public class KillExecutor implements CommandExecutor {
             return true;
         }
 
-        Player player = getPlayer(args.length == 0 && sender instanceof Player ? ((Player) sender).getName() : args[0]);
+        Player player = (args.length == 0 && sender instanceof Player) ? (Player) sender : getPlayer(args[0]);
         if (player == null) {
             sender.sendMessage(ChatColor.RED + "Player not found.");
             return true;
@@ -28,9 +29,5 @@ public class KillExecutor implements CommandExecutor {
 
     private boolean hasPermission(CommandSender sender, String permission) {
         return sender.hasPermission(permission);
-    }
-
-    private Player getPlayer(String name) {
-        return Bukkit.getPlayer(name);
     }
 }
