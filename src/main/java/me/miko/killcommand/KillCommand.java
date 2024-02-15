@@ -1,4 +1,4 @@
-package f3f5.killcommand;
+package me.miko.killcommand;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;

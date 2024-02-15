@@ -1,6 +1,6 @@
 name: KillCommand
 version: '${project.version}'
-main: f3f5.killcommand.KillCommand
+main: me.miko.killcommand.KillCommand
 api-version: 1.13
 folia-supported: true
 commands:
