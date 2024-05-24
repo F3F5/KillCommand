@@ -1,0 +1,9 @@
+name: KillCommand
+version: '${project.version}'
+main: me.miko.killcommand.KillCommand
+api-version: 1.13
+folia-supported: true
+commands:
+  kill:
+    description: It kills the player passed and if none, kills the command sender.
+    aliases: [suicide]
